@@ -22,15 +22,9 @@
     />
     <link
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/themes/splide-sea-green.min.css"
+      href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css"
     />
     <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/@splidejs/splide-extension-video@0.8.0/dist/css/splide-extension-video.min.css"
-    />
-    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide-extension-video@0.8.0/dist/js/splide-extension-video.min.js"></script>
-
     <!-- tailwind is love :) -->
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Brainywood - Become a Business Partner</title>
@@ -77,7 +71,7 @@
             <p class="hero-subhead py-6 text-xl text-gray-600">
               Investment starts with Rs.50,000.
             </p>
-            <a href="#registrationform" class="cta hidden md:block">Yes, I am interested</a>
+            <button class="cta hidden md:block">Yes, I am interested</button>
           </div>
 
           <!-- Hero pictures -->
@@ -99,7 +93,7 @@
             />
           </div>
           <!-- CTA for mobile -->
-          <a href="#registrationform" class="cta md:hidden mt-10">Yes, I'm interested!</a>
+          <button class="cta md:hidden mt-10">Yes, I'm interested!</button>
         </div>
       </div>
 
@@ -109,7 +103,7 @@
       >
         <!-- Headline -->
         <div class="f-left flex-1">
-          <h2 class="text-3xl px-4 md:px-0 font-medium capitalize w-96">
+          <h2 class="text-3xl font-medium capitalize w-96">
             Brain Science Business Partner A unique Education Business
             Opportunity
           </h2>
@@ -178,7 +172,7 @@
             />
           </div>
           <!-- CTA -->
-          <a href="#registrationform" class="cta mt-10">Yes, I want to join</a>
+          <button class="cta mt-10">Yes, I want to join</button>
         </div>
 
         <div class="video-player-popup hidden">
@@ -335,7 +329,7 @@
       <div class="tst-section text-center container mx-auto md:px-12">
         <h2 class="tst-title text-3xl font-medium mb-8">Testimonials</h2>
         <!-- Tabs -->
-        <div class="tab mx-6 md:mx-28 flex justify-between border-b-2 mb-4">
+        <div class="tab flex justify-between border-b-2 mb-12">
           <button class="tablinks active" onclick="openTab(event, 'Company')">
             Company
           </button>
@@ -349,128 +343,111 @@
 
         <div class="tabcontent-container px-8">
           <!-- Company testimonials -->
-          <div id="Company" class="tabcontent flex flex-col items-center">
+          <div id="Company" class="tabcontent">
             <!-- Company Carousel -->
             <div class="carousel-container">
-              <section class="splide" aria-label="Company video testimonials">
-                <div class="splide__track">
-                  <ul class="splide__list">
-                    <li
-                      class="splide__slide flex justify-center"
-                      data-splide-youtube="https://www.youtube.com/watch?v=7MaRrBKgF00"
+              <section class="carousel" aria-label="Gallery">
+                <ol class="carousel__viewport">
+                  <li
+                    id="carousel__slide1"
+                    tabindex="0"
+                    class="carousel__slide"
+                  >
+                    <div class="carousel__snapper">
+                      <a href="#carousel__slide4" class="carousel__prev"
+                        >Go to last slide</a
+                      >
+                      <a href="#carousel__slide2" class="carousel__next"
+                        >Go to next slide</a
+                      >
+                    </div>
+                  </li>
+                  <li
+                    id="carousel__slide2"
+                    tabindex="0"
+                    class="carousel__slide"
+                  >
+                    <div class="carousel__snapper"></div>
+                    <a href="#carousel__slide1" class="carousel__prev"
+                      >Go to previous slide</a
                     >
-                      <img src="http://img.youtube.com/vi/7MaRrBKgF00/hqdefault.jpg" />
+                    <a href="#carousel__slide3" class="carousel__next"
+                      >Go to next slide</a
+                    >
+                  </li>
+                  <li
+                    id="carousel__slide3"
+                    tabindex="0"
+                    class="carousel__slide"
+                  >
+                    <div class="carousel__snapper"></div>
+                    <a href="#carousel__slide2" class="carousel__prev"
+                      >Go to previous slide</a
+                    >
+                    <a href="#carousel__slide4" class="carousel__next"
+                      >Go to next slide</a
+                    >
+                  </li>
+                  <li
+                    id="carousel__slide4"
+                    tabindex="0"
+                    class="carousel__slide"
+                  >
+                    <div class="carousel__snapper"></div>
+                    <a href="#carousel__slide3" class="carousel__prev"
+                      >Go to previous slide</a
+                    >
+                    <a href="#carousel__slide1" class="carousel__next"
+                      >Go to first slide</a
+                    >
+                  </li>
+                </ol>
+                <aside class="carousel__navigation">
+                  <ol class="carousel__navigation-list">
+                    <li class="carousel__navigation-item">
+                      <a
+                        href="#carousel__slide1"
+                        class="carousel__navigation-button"
+                        >Go to slide 1</a
+                      >
                     </li>
-                    <!-- <li
-                      class="splide__slide flex justify-center"
-                      data-splide-youtube="https://www.youtube.com/watch?v=f9P3lXZloaE"
-                    >
-                      <img src="../assets/images/brainywood-video.png" />
+                    <li class="carousel__navigation-item">
+                      <a
+                        href="#carousel__slide2"
+                        class="carousel__navigation-button"
+                        >Go to slide 2</a
+                      >
                     </li>
-                    <li
-                      class="splide__slide flex justify-center"
-                      data-splide-youtube="https://www.youtube.com/watch?v=f9P3lXZloaE"
-                    >
-                      <img src="../assets/images/brainywood-video.png" />
-                    </li> -->
-                  </ul>
-                </div>
+                    <li class="carousel__navigation-item">
+                      <a
+                        href="#carousel__slide3"
+                        class="carousel__navigation-button"
+                        >Go to slide 3</a
+                      >
+                    </li>
+                    <li class="carousel__navigation-item">
+                      <a
+                        href="#carousel__slide4"
+                        class="carousel__navigation-button"
+                        >Go to slide 4</a
+                      >
+                    </li>
+                  </ol>
+                </aside>
               </section>
             </div>
           </div>
 
           <!-- Student testimonials -->
-          <div id="Students" class="tabcontent flex flex-col items-center">
-            <!-- Students Carousel -->
-            <div class="carousel-container">
-              <section
-                id="splide2"
-                class="splide"
-                aria-label="Company video testimonials"
-              >
-                <div class="splide__track">
-                  <ul class="splide__list">
-                    <li
-                      class="splide__slide flex justify-center"
-                      data-splide-youtube="https://www.youtube.com/watch?v=YULKgLW4IVo"
-                    >
-                      <img src="http://img.youtube.com/vi/YULKgLW4IVo/hqdefault.jpg" />
-                    </li>
-                    <li
-                      class="splide__slide flex justify-center"
-                      data-splide-youtube="https://www.youtube.com/watch?v=zYkKcZIiAOg"
-                    >
-                      <img src="http://img.youtube.com/vi/zYkKcZIiAOg/hqdefault.jpg" />
-                    </li>
-                    <li
-                      class="splide__slide flex justify-center"
-                      data-splide-youtube="https://www.youtube.com/watch?v=yRV68AAK1nk"
-                    >
-                      <img src="http://img.youtube.com/vi/yRV68AAK1nk/hqdefault.jpg" />
-                    </li>
-                    <li
-                      class="splide__slide flex justify-center"
-                      data-splide-youtube="https://www.youtube.com/watch?v=B2MK9R5DxMU"
-                    >
-                      <img src="http://img.youtube.com/vi/B2MK9R5DxMU/hqdefault.jpg" />
-                    </li>
-                    <li
-                      class="splide__slide flex justify-center"
-                      data-splide-youtube="https://www.youtube.com/watch?v=0ozbgkW-TnU"
-                    >
-                      <img src="http://img.youtube.com/vi/0ozbgkW-TnU/hqdefault.jpg" />
-                    </li>
-                  </ul>
-                </div>
-              </section>
-            </div>
+          <div id="Students" class="tabcontent">
+            <h3>Paris</h3>
+            <p>Paris is the capital of France.</p>
           </div>
 
           <!-- Franchise testimonials -->
-          <div id="Franchise" class="tabcontent flex flex-col items-center">
-            <!-- Franchise Carousel -->
-            <div class="carousel-container">
-              <section
-                id="splide3"
-                class="splide"
-                aria-label="Company video testimonials"
-              >
-                <div class="splide__track">
-                  <ul class="splide__list">
-                    <li
-                      class="splide__slide flex justify-center"
-                      data-splide-youtube="https://www.youtube.com/watch?v=jZtci5EfdO8"
-                    >
-                      <img src="http://img.youtube.com/vi/jZtci5EfdO8/hqdefault.jpg" />
-                    </li>
-                    <li
-                      class="splide__slide flex justify-center"
-                      data-splide-youtube="https://www.youtube.com/watch?v=SaXa5PfxSs4"
-                    >
-                      <img src="http://img.youtube.com/vi/SaXa5PfxSs4/hqdefault.jpg" />
-                    </li>
-                    <li
-                      class="splide__slide flex justify-center"
-                      data-splide-youtube="https://www.youtube.com/watch?v=51mNhh80fyw"
-                    >
-                      <img src="http://img.youtube.com/vi/51mNhh80fyw/hqdefault.jpg" />
-                    </li>
-                    <li
-                      class="splide__slide flex justify-center"
-                      data-splide-youtube="https://www.youtube.com/watch?v=nm_c2KLaZ9A"
-                    >
-                      <img src="http://img.youtube.com/vi/nm_c2KLaZ9A/hqdefault.jpg" />
-                    </li>
-                    <li
-                      class="splide__slide flex justify-center"
-                      data-splide-youtube="https://www.youtube.com/watch?v=jLmNDVIN7CY"
-                    >
-                      <img src="http://img.youtube.com/vi/jLmNDVIN7CY/hqdefault.jpg" />
-                    </li>
-                  </ul>
-                </div>
-              </section>
-            </div>
+          <div id="Franchise" class="tabcontent">
+            <h3>Tokyo</h3>
+            <p>Tokyo is the capital of Japan.</p>
           </div>
         </div>
 
@@ -488,129 +465,13 @@
                 ""
               );
             }
-            document.getElementById(tabName).style.display = "flex";
+            document.getElementById(tabName).style.display = "block";
             evt.currentTarget.className += " active";
           }
           try {
             document.getElementsByClassName("tablinks active")[0].click();
           } catch (error) {}
         </script>
-      </div>
-
-      <!-- written testimonials -->
-      <div class="md:hidden block">
-        <img src="../assets/images/seminar.png" alt="" />
-      </div>
-      <div class="w-tst-section container mx-auto md:px-12 flex items-center md:mt-5 md:mt-20">
-        <!-- left -->
-        <div class="flex-1 flex flex-col items-center gap-8">
-          <!-- testimonial left 1 -->
-          <div class="tst-single text-left flex flex-col gap-1 p-5 -rotate-6">
-            <div class="tst-logo mb-2">
-              <!-- Add logo here -->
-              <img
-                src="../assets/images/business-standard-logo.png"
-                alt="business standard logo"
-              />
-            </div>
-            <div class="flex justify-between">
-              <div class="tst-website text-xxs">www.business-standard.com</div>
-              <div class="tst-date text-xxs">November 25, 2021</div>
-            </div>
-            <a href="#" class="tst-headline text-xl font-bold underline">
-              Brainywood- a unique Edtech start-up.
-            </a>
-            <div class="tst-desc text-xs">
-              The Rajasthan based Guinness World Record Holder Ed-Tech start-up
-              Brainywood founded by Dr. Vinod Sharma and Dhruv Suwalka.
-            </div>
-          </div>
-          <!-- testimonial left 2 -->
-          <div
-            class="tst-single tst-lg text-left flex flex-col gap-1 p-5 rotate-6"
-          >
-            <div class="tst-logo mb-2">
-              <!-- Add logo here -->
-              <img
-                src="../assets/images/hindustan-metro-logo.png"
-                alt="hindustan metro logo"
-              />
-            </div>
-            <div class="flex justify-between">
-              <div class="tst-website text-xxs">www.hindustanmetro.com</div>
-              <div class="tst-date text-xxs">November 15, 2021</div>
-            </div>
-            <a href="#" class="tst-headline text-xl font-bold underline">
-              Brainywood is India’s First 4th Dimension Learning App
-            </a>
-            <div class="tst-desc text-xs">
-              Indian Ed-tech Industry has been significantly booming post covid.
-              More than 2000+ Ed-Tech start-ups serve the Indian education
-              sector, including Byjus, Vedantu, Unacamedy, Udemy, focusing on
-              digital learning and teaching students of different age groups.
-            </div>
-          </div>
-        </div>
-
-        <!-- center -->
-        <div class="hidden md:block">
-          <img src="../assets/images/seminar.png" alt="" />
-        </div>
-
-        <!-- right -->
-        <div class="flex-1 flex flex-col items-center gap-8">
-          <!-- testimonial right 1 -->
-          <div class="tst-single text-left flex flex-col gap-1 p-5 rotate-6">
-            <div class="tst-logo mb-2">
-              <!-- Add logo here -->
-              <img
-                src="../assets/images/the-times-of-india-logo.png"
-                alt="the times of india logo"
-              />
-            </div>
-            <div class="flex justify-between">
-              <div class="tst-website text-xxs">www.timesofindia.com</div>
-              <div class="tst-date text-xxs">October 25, 2021</div>
-            </div>
-            <a href="#" class="tst-headline text-xl font-bold underline">
-              Learning Of A Different Kind
-            </a>
-            <div class="tst-desc text-xs">
-              Art of studying workshop on education psychology was held at the
-              Evershine Towers, Vaishali Nagar, Jaipur.
-            </div>
-          </div>
-          <!-- testimonial right 2 -->
-          <div
-            class="tst-single tst-lg text-left flex flex-col gap-1 p-5 -rotate-6"
-          >
-            <div class="tst-logo mb-2">
-              <!-- Add logo here -->
-              <img
-                src="../assets/images/entrepreneur-stories.png"
-                alt="entrepreneur stories logo"
-                style="filter: invert()"
-              />
-            </div>
-            <div class="flex justify-between">
-              <div class="tst-website text-xxs">
-                www.entrepreneurstories.com
-              </div>
-              <div class="tst-date text-xxs">November 15, 2021</div>
-            </div>
-            <a href="#" class="tst-headline text-xl font-bold underline">
-              Brainywood- India’s First Learning App providing Stress-Free
-              Education
-            </a>
-            <div class="tst-desc text-xs">
-              The Guinness World Record Holder Ed-tech start-up Brainywood
-              launched its online learning app in the middle of this year’s
-              pandemic. This is India’s first learning app that helps students
-              provide a sharper memory and helps them in creating a stress-free
-              environment.
-            </div>
-          </div>
-        </div>
       </div>
 
       <!-- Stats -->
@@ -715,7 +576,7 @@
         <div class="vb-video-container">
           <iframe
             class="responsive-video"
-            src="https://www.youtube.com/embed/9LjRtFo2jJo"
+            src="https://www.youtube.com/embed/ABIZ3NnjQBM"
             title="Landing Page 1"
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -803,7 +664,7 @@
         </div>
 
         <!-- Form -->
-        <div id="registrationform" class="frm-card bg-white">
+        <div class="frm-card bg-white">
           <!-- Change the action page here to wherever you'd like to save the information. -->
           <form action="/action_page.php">
             <div class="frm-input-container flex flex-col gap-3 m-8">
@@ -894,7 +755,7 @@
                 />
               </div>
             </div>
-            <button type="submit" class="cta width-full py-5 mt-4">
+            <button type="submit" class="cta w-full py-5 mt-4">
               Pay ₹49 & Register Now
             </button>
           </form>
@@ -904,33 +765,6 @@
 
     <script src="index.js"></script>
     <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        // slider
-        Splide.defaults = {
-          drag: true,
-        };
-        new Splide(".splide", {
-          playerOptions: {
-            youtube: {
-              width: 100
-            },
-          },
-        }).mount(window.splide.Extensions);
-        new Splide("#splide2", {
-          playerOptions: {
-            youtube: {
-              width: 100
-            },
-          },
-        }).mount(window.splide.Extensions);
-        new Splide("#splide3", {
-          playerOptions: {
-            youtube: {
-              width: 100,
-            },
-          },
-        }).mount(window.splide.Extensions);
-      });
       function openVideo(e) {
         const popup = document.getElementsByClassName("video-player-popup")[0];
         const popupVid =

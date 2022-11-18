@@ -2,37 +2,6 @@
   font-family: "Fira Sans", sans-serif;
 }
 
-.splide__pagination__page {
-  background-color: #ccc !important;
-}
-
-.splide__video__play {
-  background: rgb(249, 115, 22) !important;
-}
-.splide__video__play:after {
-  border-color: transparent transparent transparent #fff !important;
-}
-
-.splide__pagination__page.is-active {
-  background-color: rgb(249, 115, 22) !important;
-}
-.splide__arrow.splide__arrow--next {
-  right: -20px !important;
-}
-.splide__arrow.splide__arrow--prev {
-  left: -20px !important;
-}
-.splide__arrow svg {
-  fill: black !important;
-}
-.splide:not(.is-overflow) .splide__pagination {
-  display: flex !important;
-}
-
-.carousel-container {
-  max-width: 800px;
-}
-
 .bg-vector-svg {
   height: 721px;
   left: 0;
@@ -84,15 +53,9 @@ h2 {
   border-radius: 14px;
   font-weight: 500;
   letter-spacing: 1px;
-  max-width: fit-content;
 }
 .cta:hover {
   background-color: #d65f04 !important;
-}
-
-.width-full {
-  max-width: unset;
-  width: 100%;
 }
 
 .tablinks {
@@ -134,36 +97,9 @@ h2 {
 }
 @media screen and (max-width: 480px) {
   .responsive-video {
-    width: 90vw;
+    width: 100vw;
     height: unset;
     aspect-ratio: 16 / 9;
-  }
-  .splide__arrow {
-    display: none !important;
-  }
-  .splide {
-    padding: 0px !important;
-    padding-bottom: 80px !important;
-  }
-  .splide__pagination {
-    bottom: 3em !important;
-  }
-  .text-xxs {
-    font-size: 6px!important;
-  }
-  .tst-headline {
-    font-size: 10px!important;
-    line-height: 16px!important;
-  }
-  .tst-desc {
-    font-size: 6px!important;
-    line-height: 10px!important;
-  }
-  .tst-single {
-    max-width: 140px!important;
-  }
-  .tst-lg {
-    max-width: 150px!important;
   }
 }
 .vid-title {
@@ -257,27 +193,6 @@ h2 {
   max-width: 800px;
 }
 
-.tst-lg {
-  max-width: 280px;
-}
-
-.tst-single {
-  max-width: 250px;
-  background: #f6f4f0;
-  transition: filter 0.2s;
-}
-.tst-single:hover {
-  filter: drop-shadow(-12px 17px 18px rgba(0, 0, 0, 0.05));
-  cursor: pointer;
-}
-.text-xxs {
-  font-size: 8px;
-}
-
-.tst-single:hover a {
-  color: blue;
-}
-
 .single-benefit-container,
 .form-info-benefits {
   gap: 25px;
@@ -325,4 +240,226 @@ h2 {
   border-radius: 10px;
   padding: 0px 12px;
   border-right: 12px solid transparent;
+}
+
+
+/* Carousel css */
+@keyframes tonext {
+  75% {
+    left: 0;
+  }
+  95% {
+    left: 100%;
+  }
+  98% {
+    left: 100%;
+  }
+  99% {
+    left: 0;
+  }
+}
+
+@keyframes tostart {
+  75% {
+    left: 0;
+  }
+  95% {
+    left: -300%;
+  }
+  98% {
+    left: -300%;
+  }
+  99% {
+    left: 0;
+  }
+}
+
+@keyframes snap {
+  96% {
+    scroll-snap-align: center;
+  }
+  97% {
+    scroll-snap-align: none;
+  }
+  99% {
+    scroll-snap-align: none;
+  }
+  100% {
+    scroll-snap-align: center;
+  }
+}
+
+* {
+  -ms-overflow-style: none;
+}
+
+.carousel ::-webkit-scrollbar {
+  width: 0;
+}
+
+.carousel ::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.carousel ::-webkit-scrollbar-thumb {
+  background: transparent;
+  border: none;
+}
+
+ol, li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.carousel {
+  position: relative;
+  padding-top: 75%;
+  filter: drop-shadow(0 0 10px #0003);
+  perspective: 100px;
+}
+
+.carousel-container {
+  width: 50%;
+}
+
+.carousel__viewport {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  overflow-x: scroll;
+  counter-reset: item;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+}
+
+.carousel__slide {
+  position: relative;
+  flex: 0 0 100%;
+  width: 100%;
+  background-color: #f99;
+  counter-increment: item;
+}
+
+.carousel__slide:nth-child(even) {
+  background-color: #99f;
+}
+
+/* .carousel__slide:before {
+  content: counter(item);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%,-40%,70px);
+  color: #fff;
+  font-size: 2em;
+} */
+
+.carousel__snapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  scroll-snap-align: center;
+}
+
+@media (hover: hover) {
+  .carousel__snapper {
+    animation-name: tonext, snap;
+    animation-timing-function: ease;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+  }
+
+  .carousel__slide:last-child .carousel__snapper {
+    animation-name: tostart, snap;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .carousel__snapper {
+    animation-name: none;
+  }
+}
+
+.carousel:hover .carousel__snapper,
+.carousel:focus-within .carousel__snapper {
+  animation-name: none;
+}
+
+.carousel__navigation {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+}
+
+.carousel__navigation-list,
+.carousel__navigation-item {
+  display: inline-block;
+}
+
+.carousel__navigation-button {
+  display: inline-block;
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: #333;
+  background-clip: content-box;
+  border: 0.25rem solid transparent;
+  border-radius: 50%;
+  font-size: 0;
+  transition: transform 0.1s;
+}
+
+.carousel::before,
+.carousel::after,
+.carousel__prev,
+.carousel__next {
+  position: absolute;
+  top: 0;
+  margin-top: 37.5%;
+  width: 4rem;
+  height: 4rem;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  font-size: 0;
+  outline: 0;
+}
+
+.carousel::before,
+.carousel__prev {
+  left: -1rem;
+}
+
+.carousel::after,
+.carousel__next {
+  right: -1rem;
+}
+
+.carousel::before,
+.carousel::after {
+  content: '';
+  z-index: 1;
+  background-color: #333;
+  background-size: 1.5rem 1.5rem;
+  background-repeat: no-repeat;
+  background-position: center center;
+  color: #fff;
+  font-size: 2.5rem;
+  line-height: 4rem;
+  text-align: center;
+  pointer-events: none;
+}
+
+.carousel::before {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='0,50 80,100 80,0' fill='%23fff'/%3E%3C/svg%3E");
+}
+
+.carousel::after {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='100,50 20,100 20,0' fill='%23fff'/%3E%3C/svg%3E");
 }
