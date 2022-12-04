@@ -132,12 +132,14 @@ h2 {
   width: 892px;
   height: 502px;
 }
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 900px) {
   .responsive-video {
     width: 90vw;
     height: unset;
     aspect-ratio: 16 / 9;
   }
+}
+@media screen and (max-width: 480px) {
   .splide__arrow {
     display: none !important;
   }
@@ -149,21 +151,21 @@ h2 {
     bottom: 3em !important;
   }
   .text-xxs {
-    font-size: 4px!important;
+    font-size: 4px !important;
   }
   .tst-headline {
-    font-size: 10px!important;
-    line-height: 16px!important;
+    font-size: 10px !important;
+    line-height: 16px !important;
   }
   .tst-desc {
-    font-size: 6px!important;
-    line-height: 10px!important;
+    font-size: 6px !important;
+    line-height: 10px !important;
   }
   .tst-single {
-    max-width: 140px!important;
+    max-width: 140px !important;
   }
   .tst-lg {
-    max-width: 150px!important;
+    max-width: 150px !important;
   }
 }
 .vid-title {
@@ -278,6 +280,18 @@ h2 {
   color: blue;
 }
 
+.award-tile {
+  min-width: 150px;
+}
+
+.review-tile {
+  flex: 0 0 30%;
+  min-width: 200px;
+  border-radius: 8px;
+  border: 1.5px solid black;
+  padding: 2px;
+}
+
 .single-benefit-container,
 .form-info-benefits {
   gap: 25px;
@@ -328,7 +342,7 @@ h2 {
 }
 
 .footer {
-  background: #001F55;
+  background: #001f55;
 }
 .fdr-headline {
   font-weight: 600;
